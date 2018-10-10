@@ -19,7 +19,7 @@ services:
     volumes:
     {% endif %}
     {% if project_data_dir is defined %}
-      - "{{ project_data_dir +':/var/lib/awx/projects:rw' }}"
+      - "{{ project_data_dir +':/var/lib/awx/projects:z' }}"
     {% endif %}
     {% if ca_trust_dir is defined %}
       - "{{ ca_trust_dir +':/etc/pki/ca-trust/source/anchors:ro' }}"
@@ -78,7 +78,7 @@ services:
     volumes:
     {% endif %}
     {% if project_data_dir is defined %}
-      - "{{ project_data_dir +':/var/lib/awx/projects:rw' }}"
+      - "{{ project_data_dir +':/var/lib/awx/projects:z' }}"
     {% endif %}
     {% if ca_trust_dir is defined %}
       - "{{ ca_trust_dir +':/etc/pki/ca-trust/source/anchors:ro' }}"
